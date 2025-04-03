@@ -122,7 +122,7 @@ body {
 
 .button {
   font-size: 24px;
-  background-color: #880015;
+  background-color: #bb001d;
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
@@ -138,7 +138,7 @@ body {
 }
 
 .button:hover:not(:disabled) {
-  background-color: #bb001d;
+  background-color: #880015;
 }
 
 .button:disabled {
@@ -279,8 +279,8 @@ body {
 }
 
 .order {
-  padding-top: 159px;
-  padding-bottom: 130px;
+  padding-top: 0px;
+  padding-bottom: 100px;
 }
 
 .order .container {
@@ -289,30 +289,32 @@ body {
 
 .order img {
   position: absolute;
-  top: -25px;
-  left: -530px;
+  max-height: 600px;
+  left: -200px;
+  top: 100px;
 }
 
 .order form {
+  padding-top: 120px;
   margin-left: 714px;
-  max-width: 480px;
+  width: 700px;
 }
 
 .order h3 {
-  font-size: 65px;
-  color: #ffffff;
+  font-size: 60px;
+  color: #bb001d;
   line-height: 100%;
   font-weight: normal;
   margin-bottom: 40px;
 }
 
 .order p {
-  font-size: 24px;
+  font-size: 20px;
   color: #d4d4d4;
   line-height: 120%;
   font-weight: normal;
   margin-bottom: 60px;
-  max-width: 435px;
+  max-width: 500px;
 }
 
 .order-form {
@@ -329,7 +331,7 @@ body {
   padding: 24px 20px;
   box-sizing: border-box;
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 3px solid #d4d4d4;
   border-radius: 15px;
   background-color: transparent;
   margin-bottom: 15px;
