@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="logo" />
+          </div>
+          <nav class="menu">
+            <ul>
+              <li><a href="#sups">Наши сапы</a></li>
+              <li><a href="#order">Забронировать</a></li>
+            </ul>
+          </nav>
+          <a href="tel:+7 929 544 44 31" class="phone">+7-929-544-44-31</a>
+        </div>
+      </header>
+
+      <section class="main-content">
+        <div class="container">
+          <img src="images/sup-man.png" alt="sup-man" class="sup-man" />
+          <div class="main-info">
+            <h1>Покорите реку верхом на надувной доске!</h1>
+            <a href="#sups" class="button" id="main-action-button"
+              >Посмотреть сапы</a
+            >
+          </div>
+          <img src="images/waves.png" alt="waves" class="main-image" />
+        </div>
+      </section>
+      <div class="gray-block"></div>
+    </main>
+
+    <section class="sups" id="sups">
+      <div class="container">
+        <h2>Выберите сап</h2>
+        <div class="sups-content" id="sups-content">
+          <aside class="sups-filter">
+            <ul>
+              <li class="active">Все сапы</li>
+              <li>Двухместный</li>
+              <li>Одноместный</li>
+            </ul>
+          </aside>
+          <div class="sups-items">
+            <article class="sup">
+              <img src="images/sup_cosmos.jpg" alt="Космонавт Двухместный" />
+              <div class="sup-details">
+                <h4>Сап "Космонавт" (двухместный)</h4>
+                <p>Двухместный сап с ярким рисунком!</p>
+                <div class="sup-action">
+                  <ul>
+                    <li>
+                      <div class="sup-period">На 1 час</div>
+                      <div class="sup-price">1450 <span>руб./час.</span></div>
+                    </li>
+                    <li>
+                      <div class="sup-period">На 1-3 часа</div>
+                      <div class="sup-price">1300 <span>руб./час.</span></div>
+                    </li>
+                    <li>
+                      <div class="sup-period">На 3+ часов</div>
+                      <div class="sup-price">1100 <span>руб./час.</span></div>
+                    </li>
+                  </ul>
+                  <a href="#order" class="button white-button">Забронировать</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <div class="container">
+        <img src="images/order-sup.png" alt="Order sup" />
+        <form [formGroup]="orderForm">
+          <h3>Забронируйте сап</h3>
+          <p>
+            Заполните контактные данные, и мы перезвоним вам для обсуждения
+            деталей и подтверждения бронирования
+          </p>
+          <div class="order-form">
+            <input
+              type="text"
+              placeholder="Сап"
+              required
+              readonly
+              id="sup"
+              formControlName="sup"
+              [class.error]="isError('sup')"
+            />
+            <input
+              type="text"
+              placeholder="Ваше имя"
+              required
+              id="name"
+              formControlName="name"
+              [class.error]="isError('name')"
+            />
+            <input
+              type="text"
+              placeholder="Ваш телефон"
+              required
+              id="phone"
+              formControlName="phone"
+              minlength="10"
+              [class.error]="isError('phone')"
+            />
+            <button
+              class="button"
+              type="button"
+              id="order-action"
+              (click)="sendOrder()"
+              [disabled]="!orderForm.valid"
+            >
+              Забронировать
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <div class="rights">все права защищены</div>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
