@@ -70,7 +70,11 @@
                       <div class="sup-price">1100 <span>руб./час.</span></div>
                     </li>
                   </ul>
-                  <a href="#order" class="button white-button">Забронировать</a>
+                  <a href="#order"
+                  class="button white-button"
+                  id="sup-order-action"
+                  onclick="showTitle()"
+                  >Забронировать</a>
                 </div>
               </div>
             </article>
@@ -89,39 +93,10 @@
             деталей и подтверждения бронирования
           </p>
           <div class="order-form">
-            <input
-              type="text"
-              placeholder="Сап"
-              required
-              readonly
-              id="sup"
-              formControlName="sup"
-              [class.error]="isError('sup')"
-            />
-            <input
-              type="text"
-              placeholder="Ваше имя"
-              required
-              id="name"
-              formControlName="name"
-              [class.error]="isError('name')"
-            />
-            <input
-              type="text"
-              placeholder="Ваш телефон"
-              required
-              id="phone"
-              formControlName="phone"
-              minlength="10"
-              [class.error]="isError('phone')"
-            />
-            <button
-              class="button"
-              type="button"
-              id="order-action"
-              (click)="sendOrder()"
-              [disabled]="!orderForm.valid"
-            >
+            <input type="text" placeholder="Выбранный сап" id="sup" readonly/>
+            <input type="text" placeholder="Ваше имя" id="name" />
+            <input type="text" placeholder="Ваш телефон" id="phone" />
+            <button class="button" type="button" id="order-action">
               Забронировать
             </button>
           </div>

@@ -25,18 +25,13 @@ filterItems.forEach((item) => {
 });
 
 // Получаем все необходимые элементы один раз
-const supInput = document.getElementById('sup');
 const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
 const orderButton = document.getElementById('order-action');
 
+
 // Массив объектов с полями и их валидаторами
 const fields = [
-  {
-    field: supInput,
-    pattern: /\S+/,
-    // message: 'Введите название автомобиля',
-  },
   {
     field: nameInput,
     pattern: /^[А-Яа-яЁёA-Za-z\s]+$/,
@@ -90,7 +85,23 @@ orderButton.addEventListener('click', function (e) {
     // Очищаем все поля
     fields.forEach((field) => {
       field.field.value = '';
-      field.field.style.borderColor = '#ffffff';
+      field.field.style.borderColor = '#d4d4d4';
     });
   }
 });
+
+// Кнопка передачи данных о сапе в форму бронирования
+const supOrderButton = document.getElementById('sup-order-action');
+// Получаем поле sup
+const supInput = document.getElementById('sup');
+
+function showTitle() {
+  // Получаем h4 напрямую по родительским элементам
+  const h4Element = document.querySelector('.sup > .sup-details > h4');
+
+  // Получаем текст заголовка
+  const titleText = h4Element.textContent;
+
+  // Устанавливаем значение в input
+  supInput.value = titleText;
+};
